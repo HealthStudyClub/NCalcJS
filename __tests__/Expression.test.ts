@@ -10,6 +10,7 @@ import {
     ValueExpression
 } from '../src/NCalc/Domain/index';
 import {EvaluateOptions} from '../src/NCalc/EvaluationOptions';
+import dayjs from "dayjs";
 
 describe('Expressions', () => {
     test('ShouldCache', () => {
@@ -460,6 +461,8 @@ describe('Expressions', () => {
     test('ShouldCompareDates', () => {
         expect(new Expression('#1/1/2009#==#1/1/2009#').Evaluate()).toBe(true);
         expect(new Expression('#2/1/2009#==#1/1/2009#').Evaluate()).toBe(false);
+        expect(new Expression('#2/1/2009#>#1/1/2009#').Evaluate()).toBe(true);
+        expect(new Expression('#2/1/2009#<#1/1/2009#').Evaluate()).toBe(false);
     });
 
     // @todo
