@@ -1,4 +1,4 @@
-// Generated from NCalc.g4 by ANTLR 4.12.0
+// Generated from src/Grammar/NCalc.g4 by ANTLR 4.13.1
 // noinspection ES6UnusedImports,JSUnusedGlobalSymbols,JSUnusedLocalSymbols
 import {
 	ATN,
@@ -56,29 +56,43 @@ export default class NCalcLexer extends Lexer {
 	public static readonly EOF = Token.EOF;
 
 	public static readonly channelNames: string[] = [ "DEFAULT_TOKEN_CHANNEL", "HIDDEN" ];
-	public static readonly literalNames: string[] = [ null, "'?'", "':'", "'&&'", 
-                                                   "'||'", "'&'", "'|'", 
-                                                   "'^'", "'=='", "'='", 
-                                                   "'!='", "'<>'", "'<'", 
-                                                   "'<='", "'>'", "'>='", 
-                                                   "'<<'", "'>>'", "'+'", 
-                                                   "'-'", "'*'", "'/'", 
-                                                   "'%'", "'!'", "'~'", 
-                                                   "'**'", "'('", "')'", 
-                                                   "','" ];
-	public static readonly symbolicNames: string[] = [ null, null, null, null, 
-                                                    null, null, null, null, 
-                                                    null, null, null, null, 
-                                                    null, null, null, null, 
-                                                    null, null, null, null, 
-                                                    null, null, null, null, 
-                                                    null, null, null, null, 
-                                                    null, "NOT", "TRUE", 
-                                                    "FALSE", "AND", "OR", 
-                                                    "ID", "FLOAT", "INTEGER", 
-                                                    "STRING", "DATETIME", 
-                                                    "NAME", "EXPONENT", 
-                                                    "WS" ];
+	public static readonly literalNames: (string | null)[] = [ null, "'?'", 
+                                                            "':'", "'&&'", 
+                                                            "'||'", "'&'", 
+                                                            "'|'", "'^'", 
+                                                            "'=='", "'='", 
+                                                            "'!='", "'<>'", 
+                                                            "'<'", "'<='", 
+                                                            "'>'", "'>='", 
+                                                            "'<<'", "'>>'", 
+                                                            "'+'", "'-'", 
+                                                            "'*'", "'/'", 
+                                                            "'%'", "'!'", 
+                                                            "'~'", "'**'", 
+                                                            "'('", "')'", 
+                                                            "','" ];
+	public static readonly symbolicNames: (string | null)[] = [ null, null, 
+                                                             null, null, 
+                                                             null, null, 
+                                                             null, null, 
+                                                             null, null, 
+                                                             null, null, 
+                                                             null, null, 
+                                                             null, null, 
+                                                             null, null, 
+                                                             null, null, 
+                                                             null, null, 
+                                                             null, null, 
+                                                             null, null, 
+                                                             null, null, 
+                                                             null, "NOT", 
+                                                             "TRUE", "FALSE", 
+                                                             "AND", "OR", 
+                                                             "ID", "FLOAT", 
+                                                             "INTEGER", 
+                                                             "STRING", "DATETIME", 
+                                                             "NAME", "EXPONENT", 
+                                                             "WS" ];
 	public static readonly modeNames: string[] = [ "DEFAULT_MODE", ];
 
 	public static readonly ruleNames: string[] = [

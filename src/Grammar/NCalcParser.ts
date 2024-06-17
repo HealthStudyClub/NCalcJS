@@ -1,4 +1,4 @@
-// Generated from NCalc.g4 by ANTLR 4.12.0
+// Generated from src/Grammar/NCalc.g4 by ANTLR 4.13.1
 // noinspection ES6UnusedImports,JSUnusedGlobalSymbols,JSUnusedLocalSymbols
 
 import {
@@ -12,6 +12,8 @@ import {
 	Interval, IntervalSet
 } from 'antlr4';
 import NCalcListener from "./NCalcListener.js";
+import NCalcVisitor from "./NCalcVisitor.js";
+
 // for running tests with parameters, TODO: discuss strategy for typed parameters in CI
 // eslint-disable-next-line no-unused-vars
 type int = number;
@@ -1074,7 +1076,7 @@ export default class NCalcParser extends Parser {
 				{
 				this.state = 243;
 				localctx._DATETIME = this.match(NCalcParser.DATETIME);
-				 localctx.val =  new ValueExpression(dayjs((localctx._DATETIME != null ? localctx._DATETIME.text : undefined).substring(1, (localctx._DATETIME != null ? localctx._DATETIME.text : undefined).length-2)).toString(), ValueType.DateTime); 
+				 localctx.val =  new ValueExpression(dayjs((localctx._DATETIME != null ? localctx._DATETIME.text : undefined).substring(1, (localctx._DATETIME != null ? localctx._DATETIME.text : undefined).length-1)).format(), ValueType.DateTime);
 						
 				}
 				break;
@@ -1411,6 +1413,14 @@ export class NcalcExpressionContext extends ParserRuleContext {
 	 		listener.exitNcalcExpression(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: NCalcVisitor<Result>): Result {
+		if (visitor.visitNcalcExpression) {
+			return visitor.visitNcalcExpression(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -1446,6 +1456,14 @@ export class LogicalExpressionContext extends ParserRuleContext {
 	public exitRule(listener: NCalcListener): void {
 	    if(listener.exitLogicalExpression) {
 	 		listener.exitLogicalExpression(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: NCalcVisitor<Result>): Result {
+		if (visitor.visitLogicalExpression) {
+			return visitor.visitLogicalExpression(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -1490,6 +1508,14 @@ export class ConditionalExpressionContext extends ParserRuleContext {
 	 		listener.exitConditionalExpression(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: NCalcVisitor<Result>): Result {
+		if (visitor.visitConditionalExpression) {
+			return visitor.visitConditionalExpression(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -1518,6 +1544,14 @@ export class BooleanExpressionContext extends ParserRuleContext {
 	public exitRule(listener: NCalcListener): void {
 	    if(listener.exitBooleanExpression) {
 	 		listener.exitBooleanExpression(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: NCalcVisitor<Result>): Result {
+		if (visitor.visitBooleanExpression) {
+			return visitor.visitBooleanExpression(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -1550,6 +1584,14 @@ export class RelationalExpressionContext extends ParserRuleContext {
 	 		listener.exitRelationalExpression(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: NCalcVisitor<Result>): Result {
+		if (visitor.visitRelationalExpression) {
+			return visitor.visitRelationalExpression(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -1578,6 +1620,14 @@ export class ShiftExpressionContext extends ParserRuleContext {
 	public exitRule(listener: NCalcListener): void {
 	    if(listener.exitShiftExpression) {
 	 		listener.exitShiftExpression(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: NCalcVisitor<Result>): Result {
+		if (visitor.visitShiftExpression) {
+			return visitor.visitShiftExpression(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -1610,6 +1660,14 @@ export class AdditiveExpressionContext extends ParserRuleContext {
 	 		listener.exitAdditiveExpression(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: NCalcVisitor<Result>): Result {
+		if (visitor.visitAdditiveExpression) {
+			return visitor.visitAdditiveExpression(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -1638,6 +1696,14 @@ export class MultiplicativeExpressionContext extends ParserRuleContext {
 	public exitRule(listener: NCalcListener): void {
 	    if(listener.exitMultiplicativeExpression) {
 	 		listener.exitMultiplicativeExpression(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: NCalcVisitor<Result>): Result {
+		if (visitor.visitMultiplicativeExpression) {
+			return visitor.visitMultiplicativeExpression(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -1675,6 +1741,14 @@ export class UnaryExpressionContext extends ParserRuleContext {
 	 		listener.exitUnaryExpression(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: NCalcVisitor<Result>): Result {
+		if (visitor.visitUnaryExpression) {
+			return visitor.visitUnaryExpression(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -1706,6 +1780,14 @@ export class ExponentialExpressionContext extends ParserRuleContext {
 	public exitRule(listener: NCalcListener): void {
 	    if(listener.exitExponentialExpression) {
 	 		listener.exitExponentialExpression(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: NCalcVisitor<Result>): Result {
+		if (visitor.visitExponentialExpression) {
+			return visitor.visitExponentialExpression(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -1744,6 +1826,14 @@ export class PrimaryExpressionContext extends ParserRuleContext {
 	public exitRule(listener: NCalcListener): void {
 	    if(listener.exitPrimaryExpression) {
 	 		listener.exitPrimaryExpression(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: NCalcVisitor<Result>): Result {
+		if (visitor.visitPrimaryExpression) {
+			return visitor.visitPrimaryExpression(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -1790,6 +1880,14 @@ export class ValueContext extends ParserRuleContext {
 	 		listener.exitValue(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: NCalcVisitor<Result>): Result {
+		if (visitor.visitValue) {
+			return visitor.visitValue(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -1818,6 +1916,14 @@ export class IdentifierContext extends ParserRuleContext {
 	public exitRule(listener: NCalcListener): void {
 	    if(listener.exitIdentifier) {
 	 		listener.exitIdentifier(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: NCalcVisitor<Result>): Result {
+		if (visitor.visitIdentifier) {
+			return visitor.visitIdentifier(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
@@ -1856,6 +1962,14 @@ export class ExpressionListContext extends ParserRuleContext {
 	 		listener.exitExpressionList(this);
 		}
 	}
+	// @Override
+	public accept<Result>(visitor: NCalcVisitor<Result>): Result {
+		if (visitor.visitExpressionList) {
+			return visitor.visitExpressionList(this);
+		} else {
+			return visitor.visitChildren(this);
+		}
+	}
 }
 
 
@@ -1880,6 +1994,14 @@ export class ArgumentsContext extends ParserRuleContext {
 	public exitRule(listener: NCalcListener): void {
 	    if(listener.exitArguments) {
 	 		listener.exitArguments(this);
+		}
+	}
+	// @Override
+	public accept<Result>(visitor: NCalcVisitor<Result>): Result {
+		if (visitor.visitArguments) {
+			return visitor.visitArguments(this);
+		} else {
+			return visitor.visitChildren(this);
 		}
 	}
 }
